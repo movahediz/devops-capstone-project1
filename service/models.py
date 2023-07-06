@@ -33,7 +33,7 @@ class PersistentBase:
 
     def create(self):
         """
-        Creates a Account to the database
+        Creates a new Account object, adds it to the database session, and commits the changes to persist it in the database.
         """
         logger.info("Creating %s", self.name)
         self.id = None  # id must be none to generate next primary key
