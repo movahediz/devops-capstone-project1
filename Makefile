@@ -50,9 +50,10 @@ lint: ## Run the linter
 	flake8 . --count --max-complexity=10 --max-line-length=127 --statistics
 
 .PHONY: tests
-tests: ## Run the unit tests
+tests: ## Run the unit tests ## nosetests -vv --with-spec --spec-color --with-coverage --cover-package=service
 	$(info Running tests...)
-	nose2 -vv --with-spec --spec-color --with-coverage --coverage=service
+	nose2 -vv --with-spec --spec-color --with-coverage term-missing --coverage=service
+	
 
 run: ## Run the service
 	$(info Starting service...)
