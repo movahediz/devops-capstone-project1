@@ -52,7 +52,7 @@ lint: ## Run the linter
 .PHONY: tests
 tests: ## Run the unit tests
 	$(info Running tests...)
-	nosetests -vv --with-spec --spec-color --with-coverage --cover-package=service
+	nose2 -vv --with-spec --spec-color --with-coverage --coverage=service
 
 run: ## Run the service
 	$(info Starting service...)
